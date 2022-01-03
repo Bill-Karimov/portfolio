@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    cursor: none;
     font-family: 'Tenor Sans', sans-serif;
 }
 ::-webkit-scrollbar {
@@ -20,25 +21,36 @@ a {
     color: #fff;
 }
 
-/* Cursor animate */
+/* Cursor events */
 #cursor, #aura {
     position: absolute;
     border-radius: 100%;
-    transition: .5s, cubic-bezier(.75,-0.97,.04,1.9) transform, .2s cubic-bezier(.75,-0.97,.04,1.9) opacity;
+    transition: .1s, cubic-bezier(.64,.02,.41,.99) transform, .2s cubic-bezier(.64,.02,.41,.99) opacity;
     user-select: none;
     pointer-events: none;
     z-index: 1000;
 }
 #cursor {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
+    transform: scale(1);
     background: rgba(255, 255, 255, .5); 
+
+}
+#cursor.cursor-active {
+    opacity: 0;
+    transform: scale(0);
 }
 #aura {
     width: 60px;
     height: 60px;
     border: 1px solid rgba(255, 255, 255, .2);
     background: rgba(255, 255, 255, .05);
+}
+#aura.cursor-active {
+    border: 1.4px solid rgba(255, 255, 255, .4);
+    transform: scale(1.2);
+    transition: .1s;
 }
 
 /* Header block */
