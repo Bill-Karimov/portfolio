@@ -64,6 +64,11 @@ $(document).ready(function($) {
                aura.removeClass('cursor-active');
           });
      }
-     
+
+     for (let i = 0; i < links.length; i++) {
+          links[i].addEventListener('mouseover', () => {
+               cursor.addClass('cursor-active');
+          });
+     }
 
 });
