@@ -16,7 +16,7 @@ $(document).mousemove(function(e) {
 
 const cursor = $('#cursor');
 const aura = $('#aura');
-const links = $('a');
+const links = $('.nav');
 
 mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
@@ -42,13 +42,14 @@ gsap.to({}, .01, {
 
           gsap.set(aura, {
                css: {
-                    left: posX - 26,
-                    top: posY - 26
+                    left: posX - 25,
+                    top: posY - 25
                }
           });
 
      }
 });
+
 gsap.to(".star-icon", {
      opacity: 1,
      repeat: 2,
@@ -91,15 +92,38 @@ $(document).ready(function($) {
           });
      }
 
+     function removeActive() {
+          var nav = $('.nav-group').find('p');
+
+          if (nav.hasClass('active')) {
+               nav.removeClass('active');
+          }
+     }
+
      $('.skills').click(function() {
+          removeActive();
           $(this).addClass('active');
+          $('body').css({'backgroundColor' : '#F1F1F1'});
           $('.main-title').hide();
+          $('.contact-group').hide();
           $('.skills-group').delay().fadeIn();
      });
 
-     $('.back-main').click(function() {
-          $('.skills').removeClass('active');
+     $('.contact').click(function() {
+          removeActive();
+          $(this).addClass('active');
+          $('body').css({'backgroundColor' : '#EBF4D1'});
+          $('.main-title').hide();
           $('.skills-group').hide();
+          $('.contact-group').delay().fadeIn();
+     });
+
+     $('.back-main').click(function() {
+          removeActive();
+          $('.skills').removeClass('active');
+          $('body').css({'backgroundColor' : '#FFE2C7'});
+          $('.skills-group').hide();
+          $('.contact-group').hide();
           $('.main-title').delay().fadeIn();
-     })
+     });
 });

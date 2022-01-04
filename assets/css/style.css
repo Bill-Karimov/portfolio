@@ -8,10 +8,11 @@
 }
 body {
     color: #333;
-    background: #FFE2C7; /*#FFE2C7 */
+    background: #ffe2c7; /*#FFE2C7 */
     font-size: 30px;
     height: 100vh;
     overflow: hidden;
+    transition: .5s;
 }
 a {
     color: #333;
@@ -48,7 +49,7 @@ a {
     transition: .1s;
 }
 
-/* Main block */
+/* animation */
 .active {
     border-bottom: 1px solid #000;
 }
@@ -56,6 +57,35 @@ a {
     opacity: 0;
     transform: translateY(20%);
 }
+.nav-group p {
+    margin-top: 10px;
+    line-height: 190%;
+}
+.nav {
+    position: relative;
+}
+.nav::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+.nav:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.nav::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    border-bottom: 1px solid #000;
+    z-index: -1;
+    transition: transform .3s ease-in-out;
+ }
+
+
+ /* main block */
+
 .main-section {
     max-width: 1300px;
     height: 100%;
@@ -100,6 +130,9 @@ a {
     opacity: 1;
 }
 
+
+/* skills block */
+
 .skills-group {
     display: none;
     width: 660px;
@@ -115,40 +148,95 @@ a {
     display: inline-block;
     margin-right: 20px;
 }
-.back-main {
-    margin: 40px 544px 0 0;
+
+
+/* contact block */
+.contact-group {
+    display: none;
 }
-.nav-group p {
-    margin-top: 10px;
-    line-height: 190%;
+.contact-group-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
 }
-.nav {
-    position: relative;
+.contact-row {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
-.nav::before {
-    transform: scaleX(0);
-    transform-origin: bottom right;
+.contact-title {
+    width: 300px;
+    margin-top: 12px;
+    margin-bottom: 40px;
+    font-size: 40px;
 }
-.nav:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.contact-num-group {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    margin-bottom: 10px;
 }
-.nav::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    inset: 0 0 0 0;
-    border-bottom: 1px solid #000;
-    z-index: -1;
-    transition: transform .3s ease-in-out;
- }
+.contact-num-title {
+    font-size: 20px;
+    margin-bottom: 10px; 
+}
+form input {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 16px;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    background-color: transparent;
+    border: 1px solid #333;
+    outline: none;
+}
+form input:first-child {
+    margin-top: 20px;
+}
+textarea.msg {
+    width: 300px;
+    height: 160px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    background-color: transparent;
+    border: 1px solid #333;
+    resize: none;
+    outline: none;
+}
+.btn {
+    width: 300px;
+    height: 60px;
+    color: #f1f1f1;
+    border: none;
+    background-color: #333;
+    font-size: 20px;
+    outline: none;
+    transition: .2s;
+}
+.btn:hover {
+    background-color: #494949;
+}
+
+/* navigate block */
+
 .skills {
     margin-right: 42px;
 }
 .contact {
     margin-right: 12px;
 }
+.back-main {
+    margin: 40px 68% 0 0;
+}
+
+
+/* footer block */
+
 .footer-wrapper, .logo-group {
     display: flex;
     justify-content: space-between;
