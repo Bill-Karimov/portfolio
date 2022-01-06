@@ -18,6 +18,9 @@ const cursor = $('#cursor');
 const aura = $('#aura');
 const links = $('.nav');
 
+const imgHover = $('.img-hover');
+const caseTitle = $('.case-title');
+const imgHeight = $('').css('height')
 mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
 function mouseCoords (e) {
@@ -47,6 +50,13 @@ gsap.to({}, .01, {
                }
           });
 
+          gsap.set(imgHover, {
+               css: {
+                    left: mouseX - 200,
+                    top: mouseY - 120 
+               }
+          });
+
      }
 });
 
@@ -72,13 +82,13 @@ gsap.to(".animate", {
 });
 
 $(document).ready(function($) {
-
      for (let i = 0; i < links.length; i++) {
           links[i].addEventListener('mouseover', () => {
                cursor.addClass('cursor-active');
                aura.addClass('cursor-active');
           });
      }
+     
      for (let i = 0; i < links.length; i++) {
           links[i].addEventListener('mouseout', () => {
                cursor.removeClass('cursor-active');
@@ -94,36 +104,45 @@ $(document).ready(function($) {
 
      function removeActive() {
           var nav = $('.nav-group').find('p');
-
           if (nav.hasClass('active')) {
                nav.removeClass('active');
           }
      }
 
+     caseTitle.on('change mouseover', function() {
+          var imgId = $(this).attr('id');
+          $('#img-' + imgId).show();
+     });
+     caseTitle.on('change mouseout', function() {
+          var imgId = $(this).attr('id');
+          $('#img-' + imgId).hide();
+     });
+
+     $('.portfolio').click(function() {
+          removeActive();
+          $(this).addClass('active');
+          $('.main-title, .skills-group, .contact-group').hide();
+          $('.portfolio-group').delay().fadeIn();
+     });
+
      $('.skills').click(function() {
           removeActive();
           $(this).addClass('active');
-          $('body').css({'backgroundColor' : '#F1F1F1'});
-          $('.main-title').hide();
-          $('.contact-group').hide();
+          $('.main-title, .portfolio-group, .contact-group').hide();
           $('.skills-group').delay().fadeIn();
      });
 
      $('.contact').click(function() {
           removeActive();
           $(this).addClass('active');
-          $('body').css({'backgroundColor' : '#EBF4D1'});
-          $('.main-title').hide();
-          $('.skills-group').hide();
+          $('.main-title, .portfolio-group, .skills-group').hide();
           $('.contact-group').delay().fadeIn();
      });
 
      $('.back-main').click(function() {
           removeActive();
           $('.skills').removeClass('active');
-          $('body').css({'backgroundColor' : '#FFE2C7'});
-          $('.skills-group').hide();
-          $('.contact-group').hide();
+          $('.portfolio-group, .skills-group, .contact-group').hide();
           $('.main-title').delay().fadeIn();
      });
 });
