@@ -1,17 +1,5 @@
-/**
- * $(document).bind( 'mousewheel', function (e) { 
-    var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*100); 
-    e.preventDefault(); 
-    e.stopPropagation(); 
-    $(document.body).stop().animate( { 
-         scrollTop : nt 
-     } , 500 , 'easeInOutCubic' );  
-} )
- */
-
 $(document).mousemove(function(e) {
-     mouseCoords(e);
-
+          mouseCoords(e);
 });
 
 const cursor = $('#cursor');
@@ -21,12 +9,13 @@ const links = $('.nav');
 const imgHover = $('.img-hover');
 const caseTitle = $('.case-title');
 const imgHeight = $('').css('height')
+
 mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
-function mouseCoords (e) {
-     mouseX = e.pageX
-     mouseY = e.pageY
-}
+     function mouseCoords (e) {
+          mouseX = e.pageX
+          mouseY = e.pageY
+     }
 
 gsap.to({}, .01, {
      repeat: -1,
@@ -50,13 +39,14 @@ gsap.to({}, .01, {
                }
           });
 
-          gsap.set(imgHover, {
-               css: {
-                    left: mouseX - 200,
-                    top: mouseY - 120 
-               }
-          });
-
+          if (window.innerWidth >= 1024) {
+               gsap.set(imgHover, {
+                    css: {
+                         left: mouseX - 200,
+                         top: mouseY - 120 
+                    }
+               });
+          }
      }
 });
 
@@ -79,6 +69,13 @@ gsap.to(".animate", {
      delay: 3.4,
      opacity: 1,
      stagger: 0.25
+});
+gsap.to(".portfolio-group, .skills-group, .contact-group", {
+     y: "0%",
+     duration: 0.5,
+     delay: 3.0,
+     opacity: 1,
+     stagger: 0.4
 });
 
 $(document).ready(function($) {
@@ -108,15 +105,16 @@ $(document).ready(function($) {
                nav.removeClass('active');
           }
      }
-
-     caseTitle.on('change mouseover', function() {
-          var imgId = $(this).attr('id');
-          $('#img-' + imgId).show();
-     });
-     caseTitle.on('change mouseout', function() {
-          var imgId = $(this).attr('id');
-          $('#img-' + imgId).hide();
-     });
+     if (window.innerWidth >= 1024) {
+          caseTitle.on('change mouseover', function() {
+               var imgId = $(this).attr('id');
+               $('#img-' + imgId).show();
+          });
+          caseTitle.on('change mouseout', function() {
+               var imgId = $(this).attr('id');
+               $('#img-' + imgId).hide();
+          });
+     }
 
      $('.portfolio').click(function() {
           removeActive();

@@ -131,6 +131,9 @@ a {
     transform: translateY(5%);
     opacity: 0;
 }
+.block-title {
+    display: none;
+}
 
 /* portfolio block */
 .portfolio-group {
@@ -326,16 +329,29 @@ textarea.msg {
     }
     .main-title {
         max-width: 560px;
+        margin-bottom: 200px;
         font-size: 46px;
     }
-    .skills-group, .contact-group {
+    .skills-group, .contact-group, .portfolio-group, .block-title {
         display: block;
+    }
+    .portfolio-group, .skills-group, .contact-group {
+        opacity: 0;
+        margin-bottom: 120px;
+        transform: translateY(5%);
+    }
+    .block-title {
+        font-size: 30px;
+        margin-bottom: 30px;
     }
     .social-group a {
         margin: 0 10px;
     }
-    .flag-icon {
+    .nav-group, .back-main {
         display: none;
+    }
+    .back-menu-group {
+        justify-content: flex-end;
     }
     .logo {
         margin-right: 25px;
@@ -348,105 +364,109 @@ textarea.msg {
     .star-icon {
         margin-top: 10px;
     }
-    .nav-group {
-        display: none;
-    }
-}
-
-/*
-@media (max-width: 860px) {
-    body {
-        overflow-y: auto;
-    }
-    .main-wrapper, .contact-group-wrapper {
-        flex-direction: column;
-    }
-    .main-group {
-        width: auto;
-    }
-    .nav-group {
-        width: 100px;
-        margin-left: 80px;
-    }
-    .logo-group {
-        margin-left: 80px;
-    }
-    .social-group {
-        width: auto;
-    }
-    .social-group a {
-        margin: 0 5px;
-    }
-}
-
-@media (max-width: 700px) {
-    .main-section {
-        padding-top: 100px;
-    }
-    .main-title {
-        max-width: 340px;
-        font-size: 38px;
-        margin-bottom: 60px;
-    }
-    .nav-group {
-        margin-top: 0;
-        margin-left: 52px;
-    }
-    .logo-group {
-        margin-left: 0;
-    }
-    .logo {
-        width: 30px;
+    .img-hover {
+        display: block;
+        position: relative;
+        width: 100%;
         height: auto;
-        margin-left: 2px;
+        margin: 20px 0  80px 0;
     }
-    .star-icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 20px;
-    }
-    .skill {
-        margin-right: 14px;
-    }
-    .social-group {
-        margin-right: 5px;
-    }
-}
-
-@media (max-width: 500px) {
-    .main-section {
-        padding: 100px 20px 40px 20px;   
-    }
-    .main-title {
+    .contact-row input {
         width: 100%;
     }
-    .social-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .contact-row textarea {
+        width: 100%;
     }
-    .back-main {
-        width: 120px;
-        margin: 0;
-    }
-    .nav-group {
-        margin-top: 0;
-    }
-    .skill-title {
-        font-size: 16px;
-        margin-bottom: 4px;
+    .btn {
+        width: 100%;
     }
 }
 
-@media (max-width: 468px) {
-    .social-group {
-        display: flex;
+@media (max-width: 780px) {
+    .contact-group-wrapper {
         flex-direction: column;
     }
-    .skill-group-items {
+    .contact-row, .contact-title, .contact-num-group {
+        width: 100%;
+    }
+    .contact-num-group {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 40px;
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .contacts a {
         margin-bottom: 20px;
     }
+    .contact-row input {
+        width: 49%;
+    }
+    .contact-row textarea {
+        width: 99%;
+    }
+    .btn {
+        width: 99%;
+    }
+    .footer-wrapper {
+        margin-bottom: 40px;
+    }
+    .social-group {
+        width: auto;
+    }
+    .main-title {
+        margin-top: 4px;
+    }
+    .star-icon {
+        width: 40px;
+    }
 }
+
+
+@media (max-width: 620px) {
+    .main-section {
+        padding: 140px 20px 20px 20px;
+    }
+    .main-title {
+        max-width: 426px;
+        font-size: 36px;
+    }
+    .contact-num-title {
+        width: 30%;
+    }
+    .social-group a{
+        margin-left: 10px;
+    }
+    .star-icon {
+        margin-right: 10px;
+    }
+}
+
+
+@media (max-width: 468px) {
+    .contact-num-group {
+        flex-direction: column;
+    }
+    .contact-num-title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .contacts a {
+        width: 226px;
+        margin-bottom: 10px;
+    }
+    .logo-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        margin-left: 2px;
+    }
+}
+/*
 @media (max-width: 380px) {
     body {
         font-size: 20px;
