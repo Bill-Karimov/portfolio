@@ -1,62 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html prefix="og: https://ogp.me/ns#" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+    <title>Bill Karimov - Digital designer & Web developer</title>
+    <meta content="hi, i am Bill, a digital designer &amp; developer based in tashkent. i build websites of a different kind. interactive microcosms that capture your imagination." name="description">
+    
+    <meta property="og:site_name" content="khayridson.com">
+    <meta content="hi, i am Bill, a web designer &amp; developer" property="og:title">
+    <meta content="i build websites of a different kind. interactive microcosms that capture your imagination." property="og:description">
+    <meta content="https://khayridson.com/assets/img/social-img.png" property="og:image">
+    
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="hi, i am Bill, a web designer &amp; developer." property="twitter:title">
+    <meta content="i build websites of a different kind. interactive microcosms that capture your imagination." property="twitter:description">
+    <meta content="https://khayridson.com/assets/img/social-img.png" property="twitter:image">
 
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'/>
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <title>Bill Karimov | Digital designer & Web developer</title>
 </head>
-<body>
+<body cz-shortcut-listen="true">
     <div id="cursor"></div>
     <div id="aura"></div>
 
     <section class="main-section">
         <div class="main-wrapper">
             <div class="main-group">
-                <img src="assets/img/Star 3.svg" class="star-icon" alt="purple-star">
-                <div class="main-content">
-
+                <div class="main-title-group">
+                    <img src="assets/img/Star 3.svg" class="star-icon" alt="purple-star">
                     <!-- welcome title -->
                     <div class="main-title">
                         <p>hi, i am Bill,<i> a digital designer </i>and<i> web developer </i>based in Tashkent, Uzbekistan</p>
                     </div>
+                </div>
+
+                <div class="main-content">
                     <!-- portfolio group -->
                     <div class="portfolio-group">
                         <h4 class="block-title">Portfolio</h4>
                         <div class="portfolio-group-wrapper">
                             <div class="cases-row">
                                 <div class="case">
-                                    <div class="case-subtitle">web design</div>
-                                    <a href="/farb" id="farb" class="case-title">Федерация Армейского Рукопашного Боя</a>
-                                    <img src="assets/img/farb.jpg" id="img-farb" class="img-hover" alt="Федерация Армейского Рукопашного Боя России">
+                                    <a href="/interior.html">
+                                        <img src="assets/img/int/01.jpg" id="img-int" class="img-hover" alt="Apartment renovation company design">
+                                        <div class="case-subtitle">web design</div>
+                                        <div id="int" class="case-title">Apartment renovation company design</div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="cases-row">
                                 <div class="case">
-                                    <div class="case-subtitle">web application</div>
-                                    <a href="/vrdb" id="vrdb" class="case-title">Versace Dominican Barbershop</a>
-                                    <img src="assets/img/vdbs.jpg" id="img-vrdb" class="img-hover" alt="Versace Dominican Barbershop">
+                                    <a href="/vdbs.html">
+                                        <img src="assets/img/vdbs/01.jpg" id="img-vdbs" class="img-hover" alt="Versace Dominican Barbershop">
+                                        <div class="case-subtitle">web application</div>
+                                        <div id="vdbs" class="case-title">Versace Dominican Barbershop</div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="cases-row">
                                 <div class="case">
-                                    <div class="case-subtitle">web design</div>
-                                    <a href="/vrdb" class="case-title">Versace Dominican Barbershop</a>
-                                    <div class="img-hover"></div>
+                                    <a href="/farb.html">
+                                        <img src="assets/img/farb/01.jpg" id="img-farb" class="img-hover" alt="Федерация армейского рукопашного боя">
+                                        <div class="case-subtitle">web design / tilda</div>
+                                        <div id="farb" class="case-title">Федерация армейского рукопашного боя</div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="cases-row">
                                 <div class="case">
-                                    <div class="case-subtitle">web design</div>
-                                    <a href="/vrdb" class="case-title">Versace Dominican Barbershop</a>
-                                    <div class="img-hover"></div>
+                                    <a href="/arch.html">
+                                        <img src="assets/img/arch/01.jpg" id="img-arch" class="img-hover" alt="Versace Dominican Barbershop">
+                                        <div class="case-subtitle">web design</div>
+                                        <div id="arch" class="case-title">Architect website design case</div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -64,12 +88,10 @@
                             <div class="back-main skill-title">back to main</div>
                             <a href="https://dribbble.com/khayridson" class="more skill-title nav" target="_blank"><i>View more</i><img src="assets/img/arr.svg" alt="arrow"></a>
                         </div>
-                        
                     </div>
 
                     <!-- skills group -->
                     <div class="skills-group">
-                        <h4 class="block-title">Skills</h4>
                         <div class="skill-group-items">
                             <div class="skill-title">design</div>
                             <div class="design-skills">
@@ -100,7 +122,6 @@
                         </div>
                         <div class="back-main skill-title">back to main</div>
                     </div>
-
                     
                     <!-- contact form -->
                     <div class="contact-group">
@@ -118,11 +139,13 @@
                                 <div class="back-main skill-title back-main-contact">back to main</div>
                             </div>
                             <div class="contact-row">
-                                <form action="#">
+                                <form id="form">
                                     <input type="text" name="name" placeholder="Name">
                                     <input type="email" name="email" placeholder="E-mail">
                                     <textarea type="textarea" name="msg" class="msg" placeholder="Message"></textarea>
-                                    <button type="button" name="btn" class="btn">Send</button>
+                                    <button type="button" name="btn" class="btn loading-btn"><span class='spinning-circle'>Send</span></button>
+                                    <div class="success-msg"></div>
+                                    <div class="alert-msg"></div>
                                 </form>
                             </div>
                         </div>
@@ -137,8 +160,6 @@
                 <p class="animate nav contact">Contact</p>
             </div>
         </div>
-
-       
 
         <div class="footer animate">
             <div class="footer-wrapper">
